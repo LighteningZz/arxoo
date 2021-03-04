@@ -1,0 +1,28 @@
+$component:'.package-header';
+$header: $component + ' .package-header-header';
+$detail: $component + ' .package-header-detail';
+
+
+.sticky-outer-wrapper.active #{$component} {
+    margin-top: 1.5rem !important;
+}
+#{$header} span  {
+    overflow: hidden;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height:1.2;
+    height: 44px;
+}
+#{$detail} span  {
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height:1.2;
+    height: 56px;
+}

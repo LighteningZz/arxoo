@@ -1,0 +1,80 @@
+@import "../layout/app-variables.scss";
+$recommend: 'div.package-desktop';
+$columns: $recommend+' >  div.columns';
+$column: $columns+' > div.column';
+$box: $column+' > a';
+$card: $box+' > div.card';
+#{$recommend} {
+    padding: 1rem 0 1rem;
+}
+
+#{$columns} {
+    overflow: visible !important;
+    transition: -ms-transform 0.5s, -webkit-transform 0.5s, transform 0.5s !important;
+    margin-bottom: 0;
+}
+
+#{$column} {
+    display: flex;
+    visibility: visible;
+}
+
+#{$column}.skip {
+    visibility: hidden !important;
+    transition: visibility 0s linear 0.5s !important;
+}
+
+#{$box} {
+    width: 100% !important;
+}
+
+
+#{$card} h3:empty {
+    height: 1em;
+    width: 75%;
+    background-color: $grey-lighter;
+    display: inline-block;
+}
+#{$card} span:empty {
+    height: 0.75em;
+    width: 100%;
+    background-color: $grey-lighter;
+    display: inline-block;
+}
+
+@media (max-width: $tablet) {
+    #{$recommend} {
+        overflow: hidden;
+    }
+    #{$columns} {
+        overflow-x: scroll !important;
+    }
+    #{$column}.skip {
+        visibility: visible !important;
+    }
+    #{$recommend} a.button.is-right {
+        display: flex;
+    }
+}
+
+#{$card} {
+    border-radius: $radius;
+    height: 100%;
+    overflow: hidden;
+}
+
+#{$card} div.image {
+    background-size: cover;
+}
+
+#{$card} .card-content {
+    padding: 0.5rem;
+}
+
+#{$card} .card-content .content h3 {
+    margin-bottom: 0;
+}
+
+#{$recommend} a.button.is-right {
+    margin-right: 0.25rem;
+}

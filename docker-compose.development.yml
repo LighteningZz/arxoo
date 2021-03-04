@@ -1,0 +1,36 @@
+version: '2.4'
+
+services:
+  nginx:
+    container_name: arxoo-proxy
+    image: nginx:alpine
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "3000:3000"
+    networks: 
+      - frontend
+    logging:
+        driver: none
+        
+  arxoo:
+    container_name: arxoo-arxoo
+    image: ${DOCKER_REGISTRY}arxoo-frontend
+    build:
+      context: .
+      dockerfile: ./Dev.Dockerfile
+    volumes:
+      - ./:/src/app:rw
+      - /src/app/node_modules
+    environment:
+      - "NODE_ENV=development"
+      - "CHOKIDAR_USEPOLLING=true"
+      - "API_SERVER=https://dev.arxoo.com"
+      # - "API_SERVER=http://arxoo-proxy"
+    networks: 
+      - frontend
+
+volumes:
+  node_modules:
+networks: 
+  frontend:

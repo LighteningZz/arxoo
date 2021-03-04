@@ -1,0 +1,162 @@
+@import "../layout/app-variables.scss";
+$recommend: 'div.recommend-carousel';
+$container: $recommend+' >  div.slick-container';
+$btn-cover: $recommend+' >  div.btn-slick-cover';
+$btn-left: $btn-cover+' >  div.btn-slick-left';
+$btn-right: $btn-cover+' >  div.btn-slick-right';
+$columns: $container+' >  div.columns';
+$column: $columns+' > div.column';
+$box: $column+' > a';
+$card: $box+' > div.card';
+$badge: $card+' > div.card-badge';
+$card-content: $card+' > div.card-content';
+$content: $card-content+' > div.content';
+
+#{$recommend} {
+    margin: 1rem 0 1rem;
+    position: relative !important;
+}
+
+#{$container} {
+    overflow: hidden !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#{$btn-cover} {
+    color: $grey-darker;
+    position: absolute !important;
+    margin-top: -0.5rem !important;
+    // display: block !important;
+    z-index: 1 !important;
+
+    cursor: pointer;
+    font-size: 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 0;
+    
+    background: $light;
+    border-radius: 50%;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,0.5);
+    
+    -moz-transition: all 0.1s linear    ;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+#{$btn-cover}:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#{$content} .card-title {
+    height: 50px;
+}
+#{$content} .card-title span {
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height:1.2;
+    height: 40px;
+}
+#{$content} .card-detail {
+    height: 16px;
+    text-align: right;
+}
+#{$content} .card-detail span {
+    font-size: 16px;
+}
+#{$content} .card-detail span.discount {
+    font-size: 14px;
+    text-decoration: line-through;
+}
+#{$btn-left}, {
+   padding-left: 0.5rem;
+}
+
+#{$btn-right} {
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+#{$columns} {
+    overflow: visible !important;
+    transition: -ms-transform 0.5s, -webkit-transform 0.5s, transform 0.5s !important;
+}
+
+#{$column} {
+    display: flex;
+    visibility: visible;
+}
+
+#{$column}.skip {
+    visibility: hidden !important;
+    transition: visibility 0s linear 0.5s !important;
+}
+
+#{$box} {
+    width: 100% !important;
+}
+
+#{$column} {
+    transition: transform 0.1s linear;
+}
+
+#{$column}:hover {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+
+#{$card} {
+    // box-shadow: none;
+    background: $light;
+    height: 100%;
+    position: relative;
+}
+#{$badge} {
+    position: absolute;
+    z-index: 1;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    padding: 4px;
+    width:100%;
+}
+
+#{$badge} .card-badge-left {
+    float: left;
+    font-size: 14px;
+}
+#{$badge} .card-badge-right {
+    float: right;
+    font-size: 14px;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#{$card} div.image {
+    background: $grey;
+    border-radius: $radius;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,0.5);
+}
+
+
+
+#{$card} .card-content {
+    padding: 0.5rem;
+}
+
+#{$card} .card-content .content h3 {
+    margin-bottom: 0;
+}
+
+#{$recommend} a.button.is-right {
+    margin-right: 0.25rem;
+}

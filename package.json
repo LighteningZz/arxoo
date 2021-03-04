@@ -1,0 +1,33 @@
+{
+  "name": "arxoo",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -L server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.18.0",
+    "bulma": "^0.7.1",
+    "classnames": "^2.2.6",
+    "currency-symbol-map": "^4.0.4",
+    "express": "^4.16.3",
+    "i18next": "^11.4.0",
+    "i18next-browser-languagedetector": "^2.2.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^7.0.0",
+    "next-routes": "^1.4.2",
+    "node-sass": "^4.9.3",
+    "react": "^16.4.1",
+    "react-alice-carousel": "^1.10.4",
+    "react-dom": "^16.4.1",
+    "react-i18next": "^7.9.0",
+    "react-image-gallery": "^0.8.9",
+    "react-no-ssr": "^1.1.0",
+    "react-redux": "^5.0.7",
+    "react-responsive": "^5.0.0",
+    "react-slick": "^0.23.1",
+    "react-stickynode": "^2.0.1"
+  }
+}

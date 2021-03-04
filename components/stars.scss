@@ -1,0 +1,26 @@
+.star {
+    display: inline-block;
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    background: url('/static/images/stars/star.png') no-repeat;
+    background-size: 100% auto;
+}
+
+.star.active {
+    background: url('/static/images/stars/star-active.png') no-repeat;
+    background-size: 100% auto;
+}
+
+.star.active.half {
+    background: url('/static/images/stars/star-half.png') no-repeat;
+    background-size: 100% auto;
+}
+
+.star::before {
+    content: ''
+}
+
+.stars.vote>.star {
+    cursor: pointer;
+}

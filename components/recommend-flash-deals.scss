@@ -1,0 +1,141 @@
+@import "../layout/app-variables.scss";
+$cover : 'div.recommend-flash-deals-cover';
+$recommend: 'div.recommend-flash-deals';
+$title: $recommend+' >  div.recommend-flash-deals-title';
+$container: $recommend+' >  div.slick-container';
+$btn-cover: $recommend+' >  div.btn-slick-cover';
+$btn-left: $btn-cover+' >  div.btn-slick-left';
+$btn-right: $btn-cover+' >  div.btn-slick-right';
+$columns: $container+' >  div.columns';
+$column: $columns+' > div.column';
+$box: $column+' > a';
+$card: $box+' > div.card';
+$card-badge: $card+' div.card-badge';
+#{$cover} {
+    background: $primary;
+}
+#{$recommend} {
+    margin: 2rem 1rem;
+    padding: 1rem 0 1rem;
+    position: relative !important;
+}
+
+@for $index from 1 through 6 {
+      #{$title} h#{$index}  {
+        color: $white;
+        text-shadow: 0 2px $grey-darker;
+    }
+}
+
+#{$card-badge} {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    z-index: 1;
+    background: white;
+    text-align: right;
+    padding: 1.5rem 0.25rem;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,0.5);
+}
+#{$title} i.fas {
+    color:red !important;
+    text-shadow: 0 2px $red;
+}
+
+#{$container} {
+    overflow: hidden !important;
+}
+
+#{$btn-cover} {
+    color: $grey-darker;
+    position: absolute !important;
+    margin-top: 2rem !important;
+    // display: block !important;
+    z-index: 1 !important;
+
+    cursor: pointer;
+    font-size: 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 0;
+    
+    background: $light;
+    border-radius: 50%;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,0.5);
+    
+    -moz-transition: all 0.1s linear    ;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+#{$btn-cover}:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+#{$btn-left}, {
+   padding-left: 0.5rem;
+}
+
+#{$btn-right} {
+    text-align: right;
+   padding-right: 0.5rem;
+}
+
+#{$columns} {
+    overflow: visible !important;
+    transition: -ms-transform 0.5s, -webkit-transform 0.5s, transform 0.5s !important;
+    margin: 0;
+}
+
+#{$column} {
+    display: flex;
+    visibility: visible;
+}
+
+#{$column}.skip {
+    visibility: hidden !important;
+    transition: visibility 0s linear 0.5s !important;
+}
+
+#{$box} {
+    width: 100% !important;
+}
+
+#{$column} {
+    transition: transform 0.1s linear;
+}
+
+#{$column}:hover {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+
+#{$card} {
+    border-radius: $radius;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,0.5);
+}
+
+#{$card} div.image {
+    background: $grey;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    // box-shadow: 0 1px 12px 0 rgba(0,0,0,0.5);
+}
+
+
+
+#{$card} .card-content {
+    padding: 0.5rem;
+}
+
+#{$card} .card-content .content h3 {
+    margin-bottom: 0;
+}
+
+#{$recommend} a.button.is-right {
+    margin-right: 0.25rem;
+}

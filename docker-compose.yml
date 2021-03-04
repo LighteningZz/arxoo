@@ -1,0 +1,19 @@
+version: '2.4'
+
+services:
+  arxoo:
+    container_name: arxoo-frontend
+    image: arxoo-frontend
+    build: .
+    environment:
+      - "NODE_ENV=production"
+      - "API_SERVER=http://arxoo-api:5000"
+    networks: 
+      - web
+    mem_limit: 512m
+    memswap_limit: 1024m
+    mem_reservation: 256m
+
+networks: 
+  web:
+    external: true
